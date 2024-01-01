@@ -58,7 +58,7 @@ def test(dataset, irt_result):
     
     pred, true = np.array(pred), np.array(true)
 
-    acc = accuracy_score(true, (pred>0.5).astype(np.int))
+    acc = accuracy_score(true, (pred>0.5).astype(int))
     auc = roc_auc_score(true, pred)
     print(f"missed {pass_cnt} items due to key errors!")
 

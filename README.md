@@ -12,6 +12,7 @@ Though I present preprocessing code and raw datasets here, you can also download
 - torch
 - visdom
 - tqdm
+- (inference) scikit-learn
 
 ### How to Run
 
