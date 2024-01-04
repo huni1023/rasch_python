@@ -28,23 +28,23 @@ def main():
                 triplet_data.append((container[0], ques, resp))
             container.clear()
 
-    with open('data.pkl', 'wb') as f:
-        pickle.dump(triplet_data, f)
+    # with open('data.pkl', 'wb') as f:
+    #     pickle.dump(triplet_data, f)
 
-    # student_list = list(set(student_list))
-    # whole_question_list = list(set(whole_question_list))
-    # model = Rasch(
-    #     student_list = student_list,
-    #     question_list=whole_question_list, 
-    #     score_triplet_list= triplet_data)
+    student_list = list(set(student_list))
+    whole_question_list = list(set(whole_question_list))
+    model = Rasch(
+        student_list = student_list,
+        question_list=whole_question_list, 
+        score_triplet_list= triplet_data)
     
-    # model.fit()
-    # params = model.get_params()
-    # # print(params)
-    # print(f"num student {len(student_list)} / num questions {len(whole_question_list)}")
+    model.fit()
+    params = model.get_params()
+    # print(params)
+    print(f"num student {len(student_list)} / num questions {len(whole_question_list)}")
 
-    # with open('irt_result.pkl','wb') as f:
-    #     pickle.dump(params, f)
+    with open('irt_result.pkl','wb') as f:
+        pickle.dump(params, f)
         
 if __name__ == "__main__":
     main()

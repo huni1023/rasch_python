@@ -79,6 +79,8 @@ class Rasch(nn.Module):
         loglike = batch[2] * (stud_param - ques_param)
         loglike -= torch.log(1+torch.exp(stud_param - ques_param))
         return -loglike.mean() # negative log likelihood 
+        # return -loglike # negative log likelihood 
+        # return -loglike.sum() # negative log likelihood 
 
     def plot_loss_progress(self, epoch):
         
